@@ -6,7 +6,7 @@ services:
     command: ["/usr/hadoop-2.7.3/etc/hadoop/slave.sh"]
     hostname: zaizai-hadoop-6
     volumes:
-      - "/User/OurEDA/hdfs:/opt/hdfs"
+      - "/Users/oureda/hdfs:/opt/hdfs"
     # environment:
     #   SPARK_WORKER_CORES: 4
     #   SPARK_WORKER_MEMORY: 3g
