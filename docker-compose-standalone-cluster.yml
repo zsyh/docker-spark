@@ -10,35 +10,11 @@ services:
       # - "./conf/spark:/usr/spark-2.1.1/conf"
       - "/opt/hdfs:/opt/hdfs"
       - "/home/zaizai/data:/data"
-    ports:
-      - "4040:4040"
-      - "4044:4044"
-      - "6066:6066"
-      - "7070:7070"
-      - "7077:7077"
-      - "8000:8000"
-      - "8030:8030"
-      - "8031:8031"
-      - "8032:8032"
-      - "8033:8033"
-      - "8042:8042"
-      - "8080:8080"
-      - "8088:8088"
-      - "8090:8090"
-      - "8480:8480"
-      - "8481:8481"
-      - "9000:9000"
-      - "9001:9001"
-      - "50010:50010"
-      - "50020:50020"
-      - "50070:50070"
-      - "50075:50075"
-      - "50090:50090"
-      - "50091:50091"
-      - "50100:50100"
-      - "50105:50105"
-      - "50470:50470"
-      - "50475:50475"
+    # extra_hosts:
+    #   - "zaizai-hadoop-6:172.6.1.181"
+    #   - "zaizai-hadoop-6.weave.local:172.6.1.181"
+    network_mode: "weave"
+
   zaizai-hadoop-5:
     image: zsyh/spark:2.1.1
     command: ["/usr/hadoop-2.7.3/etc/hadoop/slave.sh"]
@@ -51,9 +27,10 @@ services:
     #   SPARK_WORKER_CORES: 4
     #   SPARK_WORKER_MEMORY: 3g
     # extra_hosts:
-    #   - "zaizai-hadoop-1:172.6.22.1"
-    links:
-      - zaizai-hadoop-1
+    #   - "zaizai-hadoop-1:172.6.1.100"
+    network_mode: "weave"
+    # links:
+    #   - zaizai-hadoop-1
 
 
 # deprecation
